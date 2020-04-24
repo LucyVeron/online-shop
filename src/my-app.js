@@ -36,8 +36,10 @@ class MyApp extends PolymerElement {
     return html`
       <style>
         :host {
-          --app-primary-color: #4285f4;
-          --app-secondary-color: black;
+          --shop-primary-default: #FAA094FF;
+          --shop-primary-lite: #FFDDE2FF;
+          --shop-secondary-default: #008C76FF;
+          --shop-secondary-lite: #9ED9CCFF;
 
           display: block;
         }
@@ -48,7 +50,7 @@ class MyApp extends PolymerElement {
 
         app-header {
           color: #fff;
-          background-color: var(--app-primary-color);
+          background-color: var(--shop-primary-default);
         }
 
         app-header paper-icon-button {
@@ -63,12 +65,12 @@ class MyApp extends PolymerElement {
           display: block;
           padding: 0 16px;
           text-decoration: none;
-          color: var(--app-secondary-color);
+          color: black;
           line-height: 40px;
         }
 
         .drawer-list a.iron-selected {
-          color: black;
+          color: var(--shop-secondary-default);
           font-weight: bold;
         }
       </style>
@@ -84,9 +86,8 @@ class MyApp extends PolymerElement {
         <app-drawer id="drawer" slot="drawer" swipe-open="[[narrow]]">
           <app-toolbar>Menu</app-toolbar>
           <iron-selector selected="[[page]]" attr-for-selected="name" class="drawer-list" role="navigation">
-            <a name="view1" href="[[rootPath]]view1">View One</a>
-            <a name="view2" href="[[rootPath]]view2">View Two</a>
-            <a name="view3" href="[[rootPath]]view3">View Three</a>
+            <a name="view1" href="[[rootPath]]view1">Clothes</a>
+            <a name="view2" href="[[rootPath]]view2">Household</a>
           </iron-selector>
         </app-drawer>
 
@@ -96,14 +97,13 @@ class MyApp extends PolymerElement {
           <app-header slot="header" condenses="" reveals="" effects="waterfall">
             <app-toolbar>
               <paper-icon-button icon="my-icons:menu" drawer-toggle=""></paper-icon-button>
-              <div main-title="">My App</div>
+              <div main-title="">My Shop</div>
             </app-toolbar>
           </app-header>
 
           <iron-pages selected="[[page]]" attr-for-selected="name" role="main">
             <my-view1 name="view1"></my-view1>
             <my-view2 name="view2"></my-view2>
-            <my-view3 name="view3"></my-view3>
             <my-view404 name="view404"></my-view404>
           </iron-pages>
         </app-header-layout>
@@ -136,7 +136,7 @@ class MyApp extends PolymerElement {
      // Show 'view1' in that case. And if the page doesn't exist, show 'view404'.
     if (!page) {
       this.page = 'view1';
-    } else if (['view1', 'view2', 'view3'].indexOf(page) !== -1) {
+    } else if (['view1', 'view2'].indexOf(page) !== -1) {
       this.page = page;
     } else {
       this.page = 'view404';
@@ -159,9 +159,6 @@ class MyApp extends PolymerElement {
         break;
       case 'view2':
         import('./my-view2.js');
-        break;
-      case 'view3':
-        import('./my-view3.js');
         break;
       case 'view404':
         import('./my-view404.js');

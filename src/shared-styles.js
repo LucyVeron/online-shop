@@ -28,9 +28,9 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         width: 64px;
         height: 64px;
         text-align: center;
-        color: #555;
+        color: white;
         border-radius: 50%;
-        background: #ddd;
+        background: var(--shop-secondary-lite);
         font-size: 30px;
         line-height: 64px;
       }
