@@ -9,6 +9,7 @@
  */
 
 import { PolymerElement, html } from '@polymer/polymer/polymer-element.js';
+import './elements/icon-toggle.js';
 import './shared-styles.js';
 
 class MyView1 extends PolymerElement {
@@ -17,16 +18,18 @@ class MyView1 extends PolymerElement {
       <style include="shared-styles">
         :host {
           display: block;
-
           padding: 10px;
+          font-family: sans-serif;
+          --icon-toggle-color: lightgrey;
+          --icon-toggle-outline-color: black;
+          --icon-toggle-pressed-color: red;
         }
       </style>
-
       <div class="card">
-        <div class="circle">1</div>
-        <h1>View One</h1>
-        <p>Ut labores minimum atomorum pro. Laudem tibique ut has.</p>
-        <p>Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Lorem ipsum dolor sit amet, per in nusquam nominavi periculis, sit elit oportere ea.Cu mei vide viris gloriatur, at populo eripuit sit.</p>
+        <img src="../assets/sweater.jpg" width="300" height="300"/>
+        <h1>Sweater</h1>
+        <p>A cozy sweater to stay warm</p>
+        <icon-toggle toggle-icon="favorite"></icon-toggle>
       </div>
     `;
   }
