@@ -18,10 +18,8 @@ import '@polymer/app-route/app-location.js';
 import '@polymer/app-route/app-route.js';
 import '@polymer/iron-pages/iron-pages.js';
 import '@polymer/iron-selector/iron-selector.js';
-import '@polymer/paper-icon-button/paper-icon-button.js';
 import { setPassiveTouchGestures, setRootPath } from '@polymer/polymer/lib/utils/settings.js';
 import { html, PolymerElement } from '@polymer/polymer/polymer-element.js';
-import './my-icons.js';
 
 // Gesture events like tap and track generated from touch will not be
 // preventable, allowing for better scrolling performance.
@@ -40,7 +38,6 @@ class MyApp extends PolymerElement {
           --shop-primary-lite: #FFDDE2FF;
           --shop-secondary-default: #008C76FF;
           --shop-secondary-lite: #9ED9CCFF;
-
           display: block;
         }
 
@@ -51,10 +48,6 @@ class MyApp extends PolymerElement {
         app-header {
           color: #fff;
           background-color: var(--shop-primary-default);
-        }
-
-        app-header paper-icon-button {
-          --paper-icon-button-ink-color: white;
         }
 
         .drawer-list {
@@ -96,7 +89,6 @@ class MyApp extends PolymerElement {
 
           <app-header slot="header" condenses="" reveals="" effects="waterfall">
             <app-toolbar>
-              <paper-icon-button icon="my-icons:close" drawer-toggle=""></paper-icon-button>
               <div main-title="">My Shop</div>
             </app-toolbar>
           </app-header>

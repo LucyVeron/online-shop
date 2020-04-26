@@ -23,6 +23,7 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
       .card {
         margin: 24px;
         padding: 16px;
+        width: 300px;
         color: #757575;
         border-radius: 5px;
         background-color: #fff;
@@ -38,6 +39,10 @@ $_documentContainer.innerHTML = `<dom-module id="shared-styles">
         background: var(--shop-secondary-lite);
         font-size: 30px;
         line-height: 64px;
+      }
+      .products {
+        display: flex;
+        flex-wrap: wrap;
       }
       h1 {
         margin: 16px 0;

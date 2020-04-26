@@ -21,10 +21,18 @@ class MyView2 extends PolymerElement {
         }
       </style>
 
-      <div class="card">
-        <img src="../assets/towels.jpg" width="300" height="300"/>
-        <h1>Towels</h1>
-        <p>Bright colorful bath towels</p>
+      <div class="products">
+        <div class="card">
+          <img src="../images/products/towels.jpg" width="300" height="200"/>
+          <h1>Towels</h1>
+          <p>Bright colorful bath towels</p>
+        </div>
+
+        <div class="card">
+          <img src="../images/products/pillow.jpg" width="300" height="200"/>
+          <h1>Flower pillow</h1>
+          <p>Comfortable and pretty</p>
+        </div>
       </div>
     `;
   }
